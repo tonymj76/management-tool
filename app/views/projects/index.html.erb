@@ -1,0 +1,45 @@
+<p id="notice"><%#= notice %></p>
+<div class="card">
+  <div class="card-body">
+    <h2 class='card-title d-flex justify-content-between mb-4'>
+      <span>Projects</span>
+      <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
+    </h2>
+    <% @projects.each do |project|%>
+    <%= link_to project, class: 'text-decoration-none' do%>
+      <div class="card project-card">
+        <div class="card-body">
+        <h5 class="card-title text-dark"> <strong><%= project.name%></h5></strong>
+        <p class="text text-secondary">
+          <%= project.description %>
+        </p>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+    <%# <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>User</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @projects.each do |project| endTagHere
+          <tr>
+            <td><%= project.name endTagHere</td>
+            <td><%= project.description endTagHere</td>
+            <td><%= project.user_id endTagHere</td>
+            <td><%= link_to 'Show', project endTagHere</td>
+            <td><%= link_to 'Edit', edit_project_path(project) endTagHere</td>
+            <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } endTagHere</td>
+          </tr>
+        <% end endTagHere
+      </tbody>
+    </table> %>
+  </div>
+</div>
+
