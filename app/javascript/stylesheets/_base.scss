@@ -4,3 +4,19 @@
     background-color: #f7f7f7;
   }
 }
+
+#tasts-list {
+  list-style: none;
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.task-status {
+  .grip {
+    font-size: 1rem;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
