@@ -7,12 +7,22 @@
     </h2>
     <% @projects.each do |project|%>
     <%= link_to project, class: 'text-decoration-none' do%>
-      <div class="card project-card">
+      <div class="card project-card mb-2">
         <div class="card-body">
-        <h5 class="card-title text-dark"> <strong><%= project.name%></h5></strong>
-        <p class="text text-secondary">
-          <%= project.description %>
-        </p>
+          <div class="mb-3">
+            <span class="badge badge-<%= project.badge_color %>"><%= project.status %></span>
+            <span>
+              <small><%= project.percentage_complete %>% complete
+              (<%= project.total_complete %>/<%= project.total_tasks %> tasks)
+              </small>
+            </span>
+          </div>
+          <h5 class="card-title text-dark">
+            <strong><%= project.name%></strong>
+          </h5>
+          <p class="text text-secondary">
+            <%= project.description %>
+          </p>
         </div>
       </div>
     <% end %>
